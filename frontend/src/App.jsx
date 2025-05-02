@@ -1,11 +1,14 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Header from "./components/comman/header/Header";
+import Sidebar from "./components/comman/sidebar/Sidebar";
 import Home from "./pages/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Header />,
+    children: [{ path: "", element: <Home /> }],
   },
 ]);
 
