@@ -3,6 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 
 import { IoMdNotificationsOutline, IoIosSearch } from "react-icons/io";
 import { FaUserTie, FaBars } from "react-icons/fa6";
+import { RiCloseLargeFill } from "react-icons/ri";
 
 import Sidebar from "../sidebar/Sidebar";
 
@@ -25,7 +26,11 @@ const Header = () => {
             className="block focus:outline-none cursor-pointer"
             aria-label="Toggle navigation"
           >
-            <FaBars size={24} />
+            {isSidebarOpen ? (
+              <RiCloseLargeFill size={24} title="Close sidebar" />
+            ) : (
+              <FaBars size={24} title="Open sidebar" />
+            )}
           </button>
           <h1 className="text-2xl font-semibold tracking-wide">Projora</h1>
         </div>
